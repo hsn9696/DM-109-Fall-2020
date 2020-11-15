@@ -4,7 +4,7 @@ StdID | Name
 ------------ | -------------
 63187 | **Mohammad Hassan** (Group Leader)
 62998 | Muhammad Asif Khan
-19283 | Tipu Pitu
+63229 |Bushra Liaquat khan
 
 
 ## Description ##
