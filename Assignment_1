@@ -1,1 +1,132 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Floyd Warshall Algo</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="FWAlgo.js"></script>
+</head>
+<body style="font-size: 16pt;">
+	<h1>Floyd Warshall Algorithm</h1>
+	<h2>12345 - First Name Last Name</h2><!--This is the group leader-->
+	<h3>44321 - First Name Last Name</h3><!--This is the 2nd Member of the group-->
+	<h3>98765 - First Name Last Name</h3><!--This is the 3rd Member of the group-->
+	<h4><a href="about:blank" target="blank">GitHub</a></h4><!--Replace about:blank with your GitHub repository folder for assignment 1. -->
+	<p> 
+		<button id="btnRun" onclick="takingvaluesfromuser()">Run</button>
+	</p>
+	<p>
+		<textarea id="txtInput" rows="10" cols="30" placeholder="
+		0, 0, 0, 1   
+		1, 0, 1, 1
+		0, 1, 1, 0
+		0, 1, 0, 1"
+		style="font-size: 20pt;"></textarea>
+	</p>
+	<div id="divOutput" style="border: 2px solid green;padding: 10px 10px 10px 10px;">
+		<script>
+document.getElementById("divOutput").value = dist;
+
+</script>
+	</div>
+
+
+
+</body>
+</html>
+
+<script>
+
+var taInput, divOutput;
+var btnRun;
+var geek ;
+
+function takingvaluesfromuser()
+{
+
+
+var rows =3;
+var cols =3;
+
+ geek = new Array(rows);
+for(var i=0; i<rows; i++)
+{
+geek[i]=new Array(cols)
+}
+   
+for(var i=0; i<rows; i++)
+{
+for(var j=0; j<cols; j++ )
+{
+
+geek[i],[j] = document.getElementById("userinput").value; 
+
+}
+
+}
+
+
+
+
+
+}
+
+
+
+window.onload = function() {
+	console.log("Hooray! Its working");
+	taInput = document.getElementById('txtInput');
+	divOutput = document.getElementById('divOutput');
+	btnRun = document.getElementById('btnRun');
+} //end window.onload
+
+function runFwAlgo(){
+	console.log("Running Floyd Warshall")
+	divOutput.innerHTML="<p>Transitive Closure of the Relation Is:</p>"
+	floydWarshallAlgorithm()
+	divOutput.innerHTML+="Add your output here. Remove this!"
+	//Get Input from 
+}//end run
+
+
+	//Implement your solution here
+  floydWarshallAlgorithm() {
+   let geek= {};
+   for (let i = 0; i < this.nodes.length; i++) {
+      geek[this.nodes[i]] = {};
+      // For existing edges assign the dist to be same as weight
+      this.edges[this.nodes[i]].forEach(e => (geek[this.nodes[i]][e.node] = e.weight));
+      this.nodes.forEach(n => {
+         // For all other nodes assign it to infinity
+         if (geek[this.nodes[i]][n] == undefined)
+         geek[this.nodes[i]][n] = Infinity;
+         // For self edge assign dist to be 0
+         if (this.nodes[i] === n) geek[this.nodes[i]][n] = 0;
+      });
+   }
+   this.nodes.forEach(i => {
+      this.nodes.forEach(j => {
+         this.nodes.forEach(k => {
+            // Check if going from i to k then from k to j is better
+            // than directly going from i to j. If yes then update
+            // i to j value to the new value
+            if (geek[i][k] + geek[k][j] < geek[i][j])
+               geek[i][j] = geek[i][k] + geek[k][j];
+            });
+         });
+      });
+      return dist;
+   }
+
+       
+
+  
+
+
+
+	
+}
+
+</script>
+
+
