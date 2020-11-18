@@ -13,7 +13,7 @@
 	<h3>98765 - First Name Last Name</h3><!--This is the 3rd Member of the group-->
 	<h4><a href="about:blank" target="blank">GitHub</a></h4><!--Replace about:blank with your GitHub repository folder for assignment 1. -->
 	<p> 
-		<button id="btnRun" onclick="takingvaluesfromuser()">Run</button>
+		<button id="btnRun" onclick="takingvaluesfromuser()">Run</button> // issue 
 	</p>
 	<p>
 		<textarea id="txtInput" rows="10" cols="30" placeholder="
@@ -59,7 +59,7 @@ for(var i=0; i<rows; i++)
 for(var j=0; j<cols; j++ )
 {
 
-geek[i],[j] = document.getElementById("userinput").value; 
+geek[i],[j] = document.getElementById("txtInput").value; 
 
 }
 
