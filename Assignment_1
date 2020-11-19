@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Floyd Warshall Algo</title>
+	<title>Floyd Warshall Algorithm</title>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="FWAlgo.js"></script>
 </head>
@@ -29,9 +28,6 @@ document.getElementById("divOutput").value = dist;
 
 </script>
 	</div>
-
-
-
 </body>
 </html>
 
@@ -43,44 +39,31 @@ var geek ;
 
 function takingvaluesfromuser()
 {
-
-
 var rows =3;
 var cols =3;
-
  geek = new Array(rows);
 for(var i=0; i<rows; i++)
 {
 geek[i]=new Array(cols)
-}
-   
+}  
 for(var i=0; i<rows; i++)
 {
 for(var j=0; j<cols; j++ )
 {
-
 geek[i],[j] = document.getElementById("txtInput").value; 
-
 }
-
 }
-
-
-
-
-
 }
-
-
-
-window.onload = function() {
+window.onload = function() 
+{
 	console.log("Hooray! Its working");
 	taInput = document.getElementById('txtInput');
 	divOutput = document.getElementById('divOutput');
 	btnRun = document.getElementById('btnRun');
 } //end window.onload
 
-function runFwAlgo(){
+function runFwAlgo()
+{
 	console.log("Running Floyd Warshall")
 	divOutput.innerHTML="<p>Transitive Closure of the Relation Is:</p>"
 	floydWarshallAlgorithm()
@@ -90,9 +73,11 @@ function runFwAlgo(){
 
 
 	//Implement your solution here
-  floydWarshallAlgorithm() {
+  floydWarshallAlgorithm() 
+  {
    let geek= {};
-   for (let i = 0; i < this.nodes.length; i++) {
+   for (let i = 0; i < this.nodes.length; i++) 
+   {
       geek[this.nodes[i]] = {};
       // For existing edges assign the dist to be same as weight
       this.edges[this.nodes[i]].forEach(e => (geek[this.nodes[i]][e.node] = e.weight));
@@ -116,17 +101,6 @@ function runFwAlgo(){
          });
       });
       return dist;
-   }
-
-       
-
-  
-
-
-
-	
+   }	
 }
-
 </script>
-
-
