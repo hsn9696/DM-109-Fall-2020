@@ -3,7 +3,7 @@
 <head>
 	<title>Floyd Warshall Algorithm</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="FWAlgo.js"></script>
+	
 </head>
 <body style="font-size: 16pt;">
 	<h1>Floyd Warshall Algorithm</h1>
@@ -28,10 +28,8 @@ document.getElementById("divOutput").value = dist;
 
 </script>
 	</div>
-</body>
-</html>
-
-<script>
+	
+	<script>
 
 var taInput, divOutput;
 var btnRun;
@@ -79,23 +77,20 @@ function runFwAlgo()
    for (let i = 0; i < this.nodes.length; i++) 
    {
       geek[this.nodes[i]] = {};
-      // For existing edges assign the dist to be same as weight
+     
       this.edges[this.nodes[i]].forEach(e => (geek[this.nodes[i]][e.node] = e.weight));
       this.nodes.forEach(n => {
-         // For all other nodes assign it to infinity
+       
          if (geek[this.nodes[i]][n] == undefined)
          geek[this.nodes[i]][n] = Infinity;
-         // For self edge assign dist to be 0
+        
          if (this.nodes[i] === n) geek[this.nodes[i]][n] = 0;
       });
    }
    this.nodes.forEach(i => {
       this.nodes.forEach(j => {
          this.nodes.forEach(k => {
-            // Check if going from i to k then from k to j is better
-            // than directly going from i to j. If yes then update
-            // i to j value to the new value
-            if (geek[i][k] + geek[k][j] < geek[i][j])
+        if (geek[i][k] + geek[k][j] < geek[i][j])
                geek[i][j] = geek[i][k] + geek[k][j];
             });
          });
@@ -104,3 +99,7 @@ function runFwAlgo()
    }	
 }
 </script>
+</body>
+</html>
+
+
