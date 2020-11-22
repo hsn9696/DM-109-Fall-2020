@@ -24,7 +24,7 @@
 	</p>
 	<div id="divOutput" style="border: 2px solid green;padding: 10px 10px 10px 10px;">
 		<script>
-document.getElementById("divOutput").value = dist;
+document.getElementById("divOutput").value = temp3;
 
 </script>
 	</div>
@@ -35,22 +35,21 @@ var taInput, divOutput;
 var btnRun;
 var geek ;
 
+
+
 function takingvaluesfromuser()
 {
-var rows =3;
-var cols =3;
- geek = new Array(rows);
-for(var i=0; i<rows; i++)
-{
-geek[i]=new Array(cols)
-}  
-for(var i=0; i<rows; i++)
-{
-for(var j=0; j<cols; j++ )
-{
-geek[i],[j] = document.getElementById("txtInput").value; 
-}
-}
+var rows =4;
+  var cols =4;
+  var matrice = [] ;
+ for (var i = 0; i < rows; i++) {
+        matrice.push([0])
+        input  = document.getElementById("txtInput").value;
+        for (var j = 0; j < cols; j++) {
+            matrice[i][j] = input.split(' ');
+        }
+    }
+    return matrice;
 }
 window.onload = function() 
 {
@@ -71,33 +70,33 @@ function runFwAlgo()
 
 
 	//Implement your solution here
-  floydWarshallAlgorithm() 
-  {
-   let geek= {};
-   for (let i = 0; i < this.nodes.length; i++) 
-   {
-      geek[this.nodes[i]] = {};
-     
-      this.edges[this.nodes[i]].forEach(e => (geek[this.nodes[i]][e.node] = e.weight));
-      this.nodes.forEach(n => {
-       
-         if (geek[this.nodes[i]][n] == undefined)
-         geek[this.nodes[i]][n] = Infinity;
-        
-         if (this.nodes[i] === n) geek[this.nodes[i]][n] = 0;
-      });
-   }
-   this.nodes.forEach(i => {
-      this.nodes.forEach(j => {
-         this.nodes.forEach(k => {
-        if (geek[i][k] + geek[k][j] < geek[i][j])
-               geek[i][j] = geek[i][k] + geek[k][j];
-            });
-         });
-      });
-      return dist;
-   }	
+  function floydWarshall(matrice) {
+  var temp = [];
+  var temp2 = [];
+  var temp3 = [];
+  
+  for (var k = 0; k < matrice.length; k++) {
+    for (var i = 0; i < matrice.length; i++) {
+      for (var j = 0; j < matrice.length; j++) {
+        temp.push(matrice[j][i] * matrice[k][j]);
+      }
+      if (sum(temp) > 0) {
+        temp2.push(1);
+      } else {
+        temp2.push(0);
+      }
+      temp = [];
+    }
+    temp3.push(temp2);
+    temp2 = [];
+  }
+    return temp3;
 }
+
+       function sum(arr) {
+  return arr.reduce(function(a, b) {
+    return a + b;
+  }, 0);
 </script>
 </body>
 </html>
