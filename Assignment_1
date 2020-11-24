@@ -9,10 +9,10 @@
 	<h1>Floyd Warshall Algorithm</h1>
 	<h2>63187 - Mohammad Hassan Siddiqui</h2><!--This is the group leader-->
 	<h3>62998 - Asif Khan</h3><!--This is the 2nd Member of the group-->
-	<h3>98765 - First Name Last Name</h3><!--This is the 3rd Member of the group-->
-	<h4><a href="about:blank" target="blank">GitHub</a></h4><!--Replace about:blank with your GitHub repository folder for assignment 1. -->
+	<h3>63229 - Bushra Liaquat Khan</h3><!--This is the 3rd Member of the group-->
+	<h4><a href="https://github.com/hsn9696/DM-109-Fall-2020?fbclid=IwAR10jte0p0O2xkcYlhlts-GSmU7GnoLsXxWgjHEPxEwslxI_rhgCQqT47WI" target="blank">GitHub</a></h4><!--Replace about:blank with your GitHub repository folder for assignment 1. -->
 	<p> 
-		<button id="btnRun" onclick="takingvaluesfromuser()">Run</button> // issue 
+		<button id="btnRun" onclick="takingvaluesfromuser()">Run</button>  
 	</p>
 	<p>
 		<textarea id="txtInput" rows="10" cols="30" placeholder="
