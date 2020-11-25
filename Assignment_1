@@ -70,7 +70,7 @@ function runFwAlgo()
 
 
 	//Implement your solution here
-  function floydWarshall(matrice[]) {
+  function floydWarshall(matrice) {
   var temp = [];
   var temp2 = [];
   var temp3 = [];
