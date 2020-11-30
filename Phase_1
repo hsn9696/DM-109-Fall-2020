@@ -1,1 +1,173 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Warshall Algorithm</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="FWAlgo.js"></script>
+</head>
+<body style="font-size: 16pt;">
+	<h1>Floyd Warshall Algorithm</h1>
+	<h2>63187 - Mohammad Hassan Siddiqui</h2><!--This is the group leader-->
+	<h3>62998 - Asif Khan</h3><!--This is the 2nd Member of the group-->
+	<h3>98765 - First Name Last Name</h3><!--This is the 3rd Member of the group-->
+	<h4><a href="about:blank" target="blank">GitHub</a></h4><!--Replace about:blank with your GitHub repository folder for assignment 1. -->
+	<p> 
+		<button id="btnRun1"  onclick="runFwAlgo()"> Run</button>
+	</p>
+		
+		<TABLE border="1px">
+			
+				<tr><td> <h6>Value of N*N</h6>   </td>
+				<td>  <h6>Speed in m/s</h6>  </td></tr>
+				
+
+
+   <TR>
+      <TD>4*4</TD>
+      <TD>0.149</TD>
+   </TR>
+   <TR>
+      <TD>5*5</TD>
+      <TD>0.239</TD>
+   </TR>
+   <TR>
+      <TD>6*6</TD>
+      <TD>0.185</TD>
+   </TR>
+   <TR>
+      <TD>7*7</TD>
+      <TD>0.190</TD>
+   </TR>
+   <TR>
+      <TD>8*8</TD>
+      <TD>0.255</TD>
+   </TR>
+   <TR>
+      <TD>9*9</TD>
+      <TD>0.259</TD>
+   </TR>
+   <TR>
+      <TD>10*10</TD>
+      <TD>0.284</TD>
+   </TR>
+   <TR>
+      <TD>20*20</TD>
+      <TD>1.015</TD>
+   </TR>
+   <TR>
+      <TD>30*30</TD>
+      <TD>5.515</TD>
+   </TR>
+   <TR>
+      <TD>40*40</TD>
+      <TD>4.710</TD>
+   </TR>
+    <TR>
+      <TD>50*50</TD>
+      <TD>4.895</TD>
+   </TR>
+    <TR>
+      <TD>60*60</TD>
+      <TD>5.415</TD>
+   </TR>
+    <TR>
+      <TD>70*70</TD>
+      <TD>5.919</TD>
+   </TR>
+    <TR>
+      <TD>80*80</TD>
+      <TD>9.214</TD>
+   </TR>
+    <TR>
+      <TD>90*90</TD>
+      <TD>9.064</TD>
+   </TR>
+   <TR>
+      <TD>100*100</TD>
+      <TD>9.949</TD>
+   </TR>
+</TABLE>
+	
+	<div id="divOutput" style="border: 2px solid green;padding: 10px 10px 10px 10px;">
+		var taInput, divOutput;
+var btnRun;
+
+window.onload = function() {
+	console.log("Hooray! Its working");
+	taInput = document.getElementById('txtInput');
+	divOutput = document.getElementById('divOutput');
+	btnRun = document.getElementById('btnRun');
+} //end window.onload
+
+function runFwAlgo(){
+	console.log("Running Floyd Warshall")
+	divOutput.innerHTML="<p>Transitive Closure of the Relation Is:</p>"
+
+ arr = randomCreationofarray(1210000);
+
+	var matrice = [];
+
+
+ matrice =creationof2darray(arr,1100)
+output = FwAlgo(matrice);
+divOutput.innerHTML = output ;
+
+        	
+        }	
+ function creationof2darray(array, size) {
+    var matrice = [];
+    for(var i = 0; i < array.length; i += size) {
+        matrice.push(array.slice(i, i + size));
+    }
+    return matrice;
+}
+    
+//end run
+
+function FwAlgo(matrice){
+	var m = [];
+   m = matrice;
+
+    var t0 = performance.now();
+        console.log(t0);
+
+          for (var i = 0; i<m.length;  i++) {
+
+
+          	for (var j = 0; j<m.length;  j++)
+          	{
+
+                  	for (var k = 0; k<m.length;  k++)
+                  	{
+
+
+                  		m[j][k]=m[j][k] || (m[j][i] && m[i][k]);
+
+}
+
+          	}
+
+ }
+           var t1 = performance.now();
+        console.log(t1);
+        console.log(t1 - t0);
+
+          return (t1 - t0) ;
+}//end sol1
+
+function randomCreationofarray(size)
+{
+var arr = [];
+for (var i=0;i<size;i++)
+{
+
+     arr.push(Math.round(Math.random()))
+}
+return arr
+
+}
+
+	</div>
+</body>
+</html>
