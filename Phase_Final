@@ -1,1 +1,39 @@
 
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "Efficiency of Warshall Algorithm on different sizes of 2D matrices "              
+		},
+		data: [              
+		{
+			
+			type: "column",
+			dataPoints: [
+				{ label: "4 x 4",  y: 0.15 },
+				{ label: "8 x 8", y: 0.25  },
+				{ label: "20 x 20", y: 1  },
+				{ label: "30 x 3x",  y: 5  },
+				{ label: "50 x 50",  y: 4.5  },
+				{ label: "80 x 80",  y: 9  },
+				{ label: "100 x 100",  y: 10  },
+			]
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; max-width: 920px; margin: 0px auto;"></div>
+
+<h4><a href="https://github.com/hsn9696/DM-109-Fall-2020" target="blank">GitHub</a></h4>
+<h4><a href="https://drive.google.com/file/d/1yjHhsqEwrQugcsCXpbxI2mk8MS1A0d-6/view?usp=sharing" target="blank">Link of video</a></h4>
+</body>
+</html>
